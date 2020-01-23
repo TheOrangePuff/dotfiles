@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Suspend dunst and lock, then resume dunst when unlocked.
+# Start i3lock-color with a bunch of arguments
 i3lock -n -i $HOME/Wallpapers/homer_lock.png \
     --insidecolor=373445ff --ringcolor=ffffffff --line-uses-inside \
     --keyhlcolor=d23c3dff --bshlcolor=d23c3dff --separatorcolor=00000000 \
