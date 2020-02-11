@@ -13,3 +13,4 @@ export EDITOR=vim
 
 # dotfile config to git
 alias config='/usr/bin/git --git-dir=/home/daniel/.cfg/ --work-tree=/home/daniel'
+

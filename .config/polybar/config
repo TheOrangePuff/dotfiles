@@ -59,7 +59,7 @@ cursor-scroll = ns-resize
 [bar/mainbar]
 inherit = bar/master
 
-modules-left = bspwm 
+modules-left = bspwm
 modules-center = xwindow
 modules-right = updates-arch-combined cpu memory pulseaudio eth date powermenu
 
@@ -162,13 +162,13 @@ enable-click = true
 ; Default: true
 enable-scroll = false
 
-; Set the scroll cycle direction 
+; Set the scroll cycle direction
 ; Default: true
 reverse-scroll = false
 
-; Use fuzzy (partial) matching on labels when assigning 
+; Use fuzzy (partial) matching on labels when assigning
 ; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces 
+; Example: code;♚ will apply the icon to all workspaces
 ; containing 'code' in the label
 ; Default: false
 fuzzy-match = true
@@ -179,7 +179,7 @@ ws-icon-0 = Firefox;龜
 ws-icon-1 = Steam;
 ws-icon-2 = Terminal;
 ws-icon-3 = Chat;
-ws-icon-default =  
+ws-icon-default = 
 
 label-monitor = %icon%
 
@@ -272,7 +272,7 @@ interval = 3.0
 
 format-connected-prefix = "  "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip% 
+label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -298,7 +298,7 @@ label = %time% %date%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> 
+format-volume = <label-volume>
 label-volume =   %percentage%%
 label-volume-foreground = ${root.foreground}
 
@@ -409,7 +409,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open =  
+label-open = 
 label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |

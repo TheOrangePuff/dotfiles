@@ -2,15 +2,19 @@
 # wm independent hotkeys
 #
 
+# help menu
+super + alt + @h
+	$HOME/.config/sxhkd/keybinds.sh
+
 # terminal emulator
 super + Return
-	urxvt
+	kitty
 
 # program launcher
 super + @space
 	rofi -show
 
-# make sxhkd reload its configuration files:
+# make sxhkd reload its configuration files
 super + Escape
 	pkill -USR1 -x sxhkd
 
@@ -18,8 +22,13 @@ super + Escape
 super + p
 	scrot -u -e 'mv $f ~/images/shots/'
 
-super + shift + l
-	./lock.sh
+# take an interactive screenshot
+super + alt + @p
+	scrot -s -e 'mv $f ~/images/shots/'
+
+# lock the computer
+super + alt + l
+	$HOME/.config/sxhkd/lock.sh
 
 #
 # bspwm hotkeys
