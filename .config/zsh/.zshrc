@@ -54,3 +54,8 @@ autoload -Uz _zinit
 # Install plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+zinit light molovo/tipz
+
+# Plugin config
+# Custom tipz text
+TIPZ_TEXT='💡 Use alias:'

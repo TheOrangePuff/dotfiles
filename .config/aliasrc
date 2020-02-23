@@ -8,7 +8,7 @@ alias vi="nvim"
 alias v="nvim"
 
 # Pacman
-alias pu="pacman -Syu"
+alias pu="sudo pacman -Syu"
 
 # Yay
 alias yu="yay -Syu"
