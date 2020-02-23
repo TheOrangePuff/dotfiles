@@ -18,6 +18,9 @@ then
 fi
 dunst &
 
+# Auto suspend after 15 minutes
+xautolock -time 15 -locker "systemctl suspend" -detectsleep
+
 wal -a 85 -i $WALLPAPER &
 
 # source the colors.

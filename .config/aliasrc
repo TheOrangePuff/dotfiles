@@ -1,0 +1,14 @@
+
+# Config for storing dotfiles in git
+alias config='/usr/bin/git --git-dir=/home/daniel/.cfg/ --work-tree=/home/daniel'
+
+# Use neovim
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+
+# Pacman
+alias pu="pacman -Syu"
+
+# Yay
+alias yu="yay -Syu"

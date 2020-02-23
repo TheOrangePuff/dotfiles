@@ -445,4 +445,4 @@ margin-bottom = 5
 [module/updates-arch-combined]
 type = custom/script
 exec = $HOME/.config/polybar/updates-arch-combined.sh
-interval = 300
+interval = 30
