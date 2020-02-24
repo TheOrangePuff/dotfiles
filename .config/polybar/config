@@ -66,6 +66,13 @@ modules-right = updates-arch-combined cpu memory pulseaudio eth date powermenu
 tray-position = right
 tray-detached = false
 
+[bar/laptop]
+inherit = bar/master
+
+modules-left = bspwm
+modules-center = xwindow
+modules-right = updates-arch-combined cpu memory pulseaudio wlan eth date battery powermenu
+
 [bar/stocks_bar]
 inherit = bar/master
 
@@ -245,7 +252,7 @@ label = %percentage_used:02%%
 
 [module/wlan]
 type = internal/network
-interface = wlp6s0
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -267,7 +274,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = eno1
+interface = enp0s31f6
 interval = 3.0
 
 format-connected-prefix = "  "
@@ -354,34 +361,38 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = ADP1
-full-at = 98
+full-at = 97
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline =
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline =
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+format-full-underline =
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+label-charging = %percentage%%
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
+
+label-discharging = %percentage%%
 
 [module/temperature]
 type = internal/temperature
