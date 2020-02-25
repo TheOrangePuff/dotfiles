@@ -69,16 +69,9 @@ tray-detached = false
 [bar/laptop]
 inherit = bar/master
 
-modules-left = bspwm
+modules-left = bspwm taskwarrior
 modules-center = xwindow
 modules-right = updates-arch-combined cpu memory pulseaudio wlan eth date battery powermenu
-
-[bar/stocks_bar]
-inherit = bar/master
-
-bottom = true
-
-modules-right = stock_ticker
 
 [module/xwindow]
 type = internal/xwindow
@@ -256,7 +249,6 @@ interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
 label-connected = %essid%
 
 format-disconnected =
@@ -457,3 +449,11 @@ margin-bottom = 5
 type = custom/script
 exec = $HOME/.config/polybar/updates-arch-combined.sh
 interval = 30
+
+[module/taskwarrior]
+interval = 30
+type = custom/script
+exec = $HOME/.config/polybar/task_polybar.sh
+format = <label>
+format-prefix = "  "
+click-left = task "$((`cat /tmp/tw_polybar_id`))" done
