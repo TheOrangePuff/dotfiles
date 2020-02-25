@@ -35,6 +35,18 @@ super + alt + m
 	$HOME/.config/sxhkd/vms.sh
 
 #
+# laptop shortcut keys
+#
+
+# brightness up
+XF86MonBrightnessUp
+	light -A 10
+
+# brightness down
+XF86MonBrightnessDown
+	light -U 10
+
+#
 # bspwm hotkeys
 #
 
