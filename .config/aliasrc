@@ -3,12 +3,15 @@
 alias config='/usr/bin/git --git-dir=/home/daniel/.cfg/ --work-tree=/home/daniel'
 
 # Use neovim
-alias vim="nvim"
-alias vi="nvim"
-alias v="nvim"
+alias vim='nvim'
+alias vi='nvim'
+alias v='nvim'
 
 # Pacman
-alias pu="sudo pacman -Syu"
+alias pu='sudo pacman -Syu'
 
 # Yay
-alias yu="yay -Syu"
+alias yu='yay -Syu'
+
+# Git
+alias tree='git log --all --decorate --oneline --graph'
