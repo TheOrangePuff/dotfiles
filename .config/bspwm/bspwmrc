@@ -4,7 +4,7 @@ WALLPAPER=$HOME/Wallpapers/plenio.jpg
 
 HOSTNAME=$(cat /etc/hostname)
 
-$HOME/.screenlayout/default.sh
+$HOME/.screenlayout/work.sh
 $HOME/.config/polybar/startup.sh
 
 # Start all programs
@@ -33,12 +33,17 @@ bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 
 if [ $HOSTNAME = "Daniels-Laptop" ]; then
-	bspc monitor HDMI-2 -d "Firefox Main" Misc VM
-	bspc monitor eDP-1 -d Terminal "Firefox Secondary" Misc
+	# if only one monitor
+    if [ $(xrandr | grep " connected " | awk '{ print$1 }' | wc -l) = 1 ]; then
+        bspc monitor eDP-1 -d Firefox Terminal Misc VM Terminal Firefox Misc
+    else
+        bspc monitor HDMI-2 -d Firefox Terminal Misc VM
+	    bspc monitor eDP-1 -d Terminal Firefox Misc
+    fi
 else
 	bspc monitor DVI-D-0 -d Chat Misc
-	bspc monitor DP-0 -d "Firefox Main" Misc
-	bspc monitor HDMI-0 -d Terminal "Firefox Secondary" Steam
+	bspc monitor DP-0 -d Firefox Misc
+	bspc monitor HDMI-0 -d Terminal Firefox Steam
 fi
 
 bspc config border_width         2
