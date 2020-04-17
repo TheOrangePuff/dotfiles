@@ -22,6 +22,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'dylanaraps/wal.vim'
 Plug 'kjwon15/vim-transparent'
 Plug 'calviken/vim-gdscript3'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 set bg=dark
