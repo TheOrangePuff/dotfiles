@@ -21,6 +21,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'dylanaraps/wal.vim'
 Plug 'kjwon15/vim-transparent'
+Plug 'morhetz/gruvbox'
 Plug 'calviken/vim-gdscript3'
 Plug 'vim-syntastic/syntastic'
 call plug#end()
@@ -32,7 +33,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 
 " Making things look nice
-	colorscheme wal
+	colorscheme gruvbox
 	hi! Normal guibg=NONE ctermbg=NONE
 	hi! NonText ctermbg=NONE guibg=NONE
 
