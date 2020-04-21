@@ -72,7 +72,7 @@ inherit = bar/master
 
 modules-left = bspwm taskwarrior
 modules-center = xwindow
-modules-right = updates-arch-combined cpu memory pulseaudio wlan eth date battery powermenu
+modules-right = updates-arch-combined cpu memory pulseaudio wlan eth date battery battery-removable powermenu
 
 [module/xwindow]
 type = internal/xwindow
@@ -387,6 +387,10 @@ animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
 label-discharging = %percentage%%
+
+[module/battery-removable]
+inherit = module/battery
+battery = BAT1
 
 [module/temperature]
 type = internal/temperature
