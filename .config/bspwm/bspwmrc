@@ -36,7 +36,7 @@ bspc config active_border_color "$color2"
 bspc config focused_border_color "$color15"
 
 # Configure desktops
-./desktops.sh
+$HOME/.config/bspwm/desktops.sh
 
 ### Auto start programs
 
