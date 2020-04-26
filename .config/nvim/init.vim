@@ -24,6 +24,7 @@ Plug 'kjwon15/vim-transparent'
 Plug 'morhetz/gruvbox'
 Plug 'calviken/vim-gdscript3'
 Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set bg=dark
@@ -119,3 +120,13 @@ set clipboard+=unnamedplus
 if &diff
     highlight! link DiffText MatchParen
 endif
+
+
+" PLUGIN CONFIGS
+
+" gitgutter
+" Set the background to the correct color
+highlight clear SignColumn
+" Update sign column more frequently
+set updatetime=250
+
