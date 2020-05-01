@@ -25,6 +25,7 @@ Plug 'morhetz/gruvbox'
 Plug 'calviken/vim-gdscript3'
 Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
+Plug 'gregsexton/matchtag'
 call plug#end()
 
 set bg=dark
