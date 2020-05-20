@@ -27,6 +27,8 @@ bspc rule -a Steam desktop='Steam' follow=on focus=on
 
 bspc rule -a $BROWSER -o desktop='Browser Main'
 
+bspc rule -a "rdesktop" -o desktop='VM'
+
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
 
