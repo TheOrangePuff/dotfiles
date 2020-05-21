@@ -30,10 +30,6 @@ super + alt + @p
 super + alt + l
 	$HOME/.config/sxhkd/lock.sh
 
-# open list of Virtual Machines
-super + alt + m
-	$HOME/.config/sxhkd/vms.sh
-
 #
 # laptop shortcut keys
 #
