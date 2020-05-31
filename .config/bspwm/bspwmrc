@@ -22,12 +22,20 @@ bspc config gapless_monocle      true
 # Remove all the rules
 bspc rule -r "*"
 
+# Put discord in my chat desktop
 bspc rule -a discord desktop='Chat'
+
+# Put steam onto the steam desktop
 bspc rule -a Steam desktop='Steam' follow=on focus=on
 
+# Put the first instance of my browser on my browser main desktop
 bspc rule -a $BROWSER -o desktop='Browser Main'
 
+# Put remote desktop windows goto the VM desktop
 bspc rule -a "rdesktop" desktop='VM'
+
+# Set zathura to tiled mode
+bspc rule -a Zathura state=tiled
 
 # source the colors.
 . "${HOME}/.cache/wal/colors.sh"
