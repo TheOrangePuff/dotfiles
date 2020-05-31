@@ -70,5 +70,8 @@ xautolock -time 15 -locker "systemctl suspend" -detectsleep -corners +00- &
 
 wal -a 85 -i $WALLPAPER &
 
+# Set wmname (make Java swing applications work)
+wmname LG3D
+
 ###
 
