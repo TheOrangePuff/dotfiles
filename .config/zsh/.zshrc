@@ -55,3 +55,6 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 
+# direnv
+eval "$(direnv hook zsh)"
+
