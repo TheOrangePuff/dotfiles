@@ -50,7 +50,7 @@ font-0 = fixed:Source Code Pro:pixelsize=10;2
 font-1 = FontAwesome5Free:style=Solid:size=10;2
 font-2 = FontAwesome5Free:style=Regular:size=10;2
 font-3 = FontAwesome5Brands:style=Regular:size=10;2
-font-4 = Siji:size=11;2
+font-4 = Wuncon Siji:size=11;2
 
 wm-restack = bspwm
 
