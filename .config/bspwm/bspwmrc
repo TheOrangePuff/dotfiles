@@ -6,6 +6,7 @@ BROWSER='Firefox'
 WALLPAPER=$HOME/Wallpapers/plenio.jpg
 HOSTNAME=$(cat /etc/hostname)
 
+wal -a 85 -i $WALLPAPER
 $HOME/.screenlayout/default.sh
 $HOME/.config/polybar/startup.sh
 
@@ -75,8 +76,6 @@ discord &
 
 # Auto suspend after 15 minutes
 xautolock -time 15 -locker "systemctl suspend" -detectsleep -corners +00- &
-
-wal -a 85 -i $WALLPAPER &
 
 # Set wmname (make Java swing applications work)
 wmname LG3D
