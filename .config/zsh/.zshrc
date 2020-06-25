@@ -1,8 +1,9 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%{$fg[green]%}%~%<<%{$reset_color%} $ "
 
-VISUAL=nvim; export VISUAL EDITOR=vim; export EDITOR
+VISUAL=nvim; export VISUAL
+EDITOR=nvim; export EDITOR
 
 # History in cache directory:
 HISTSIZE=10000
