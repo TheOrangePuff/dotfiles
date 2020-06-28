@@ -11,8 +11,8 @@ if [ $HOSTNAME = "Daniels-Laptop" ]; then
     fi
 else
 	bspc monitor DVI-D-0 -d Chat Misc
-	bspc monitor DP-0 -d "Browser Main" Misc
-	bspc monitor HDMI-0 -d Terminal "Browser Secondary" Steam
+	bspc monitor HDMI-0 -d "Browser Main" Misc
+	bspc monitor DP-0 -d Terminal "Browser Secondary" Steam
 fi
 
 ###
