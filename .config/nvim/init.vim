@@ -26,6 +26,7 @@ Plug 'calviken/vim-gdscript3'
 Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
 Plug 'gregsexton/matchtag'
+Plug 'conornewton/vim-pandoc-markdown-preview'
 call plug#end()
 
 set bg=dark
@@ -130,4 +131,7 @@ endif
 highlight clear SignColumn
 " Update sign column more frequently
 set updatetime=250
+
+" pandoc markdown viewer
+let g:md_pdf_viewer="zathura"
 
