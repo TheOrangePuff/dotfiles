@@ -59,9 +59,9 @@ if ! pgrep "sxhkd" > /dev/null
 then
 	sxhkd &
 fi
-if ! pgrep "compton" > /dev/null
+if ! pgrep "picom" > /dev/null
 then
-	compton &
+	picom &
 fi
 if ! pgrep -x "redshift" > /dev/null
 then
