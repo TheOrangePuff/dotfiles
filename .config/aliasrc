@@ -15,3 +15,11 @@ alias yu='yay -Syu'
 
 # Git
 alias tree='git log --all --decorate --oneline --graph'
+
+# bc - An arbitrary precision calculator language
+function =
+{
+  echo "$@" | bc -l
+}
+
+alias calc="="
