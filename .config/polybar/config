@@ -177,7 +177,7 @@ fuzzy-match = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; Note that the label needs to correspond with the bspwm workspace name
-ws-icon-0 = Browser;龜
+ws-icon-0 = Browser;
 ws-icon-1 = Steam;
 ws-icon-2 = Terminal;
 ws-icon-3 = Chat;
