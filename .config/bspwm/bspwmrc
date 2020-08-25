@@ -3,10 +3,11 @@
 ### Variables
 
 BROWSER='Firefox'
-WALLPAPER=$HOME/Wallpapers/plenio.jpg
+WALLPAPER=$HOME/Wallpapers/foggy_forest.jpg
 HOSTNAME=$(cat /etc/hostname)
 
-wal -a 85 -i $WALLPAPER
+wal --theme base16-gruvbox-hard
+feh --bg-fill $WALLPAPER
 $HOME/.screenlayout/default.sh
 $HOME/.config/polybar/startup.sh
 
@@ -42,9 +43,9 @@ bspc rule -a Zathura state=tiled
 . "${HOME}/.cache/wal/colors.sh"
 
 # Set the border colors.
-bspc config normal_border_color "$color1"
-bspc config active_border_color "$color2"
-bspc config focused_border_color "$color15"
+bspc config normal_border_color "$color8"
+bspc config active_border_color "$color12"
+bspc config focused_border_color "$color2"
 
 # Configure desktops
 $HOME/.config/bspwm/desktops.sh
