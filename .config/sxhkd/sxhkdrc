@@ -19,12 +19,12 @@ super + Escape
 	pkill -USR1 -x sxhkd
 
 # take a screenshot
-super + p
+Print
 	scrot -u -e 'mv $f ~/images/shots/'
 
 # take an interactive screenshot
-super + alt + @p
-	scrot -s -e 'mv $f ~/images/shots/'
+ctrl + Print
+	scrot -s -f -e 'mv $f ~/images/shots/'
 
 # lock the computer
 super + alt + l
