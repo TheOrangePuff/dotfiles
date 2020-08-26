@@ -72,11 +72,11 @@ if ! pgrep "dunst" > /dev/null
 then
 	dunst &
 fi
-
+if ! pgrep "light-locker" > /dev/null
+then
+	light-locker --lock-after-screensaver=60 &
+fi
 discord &
-
-# Auto suspend after 15 minutes
-xautolock -time 15 -locker "systemctl suspend" -detectsleep -corners +00- &
 
 # Set wmname (make Java swing applications work)
 wmname LG3D
