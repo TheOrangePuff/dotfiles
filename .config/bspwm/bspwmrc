@@ -76,6 +76,11 @@ if ! pgrep "light-locker" > /dev/null
 then
 	light-locker --lock-after-screensaver=60 &
 fi
+if ! pgrep "flashfocus" > /dev/null
+then
+	flashfocus &
+fi
+
 discord &
 
 # Set wmname (make Java swing applications work)
