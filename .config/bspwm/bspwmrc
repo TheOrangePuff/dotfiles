@@ -6,7 +6,7 @@ BROWSER='Firefox'
 WALLPAPER=$HOME/Wallpapers/foggy_forest.jpg
 HOSTNAME=$(cat /etc/hostname)
 
-wal --theme base16-gruvbox-hard
+wpg -s foggy_forest.jpg
 feh --bg-fill $WALLPAPER
 $HOME/.screenlayout/default.sh
 $HOME/.config/polybar/startup.sh
