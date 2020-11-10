@@ -2,6 +2,11 @@
 
 # https://github.com/polybar/polybar-scripts/tree/master/polybar-scripts/updates-arch-combined
 
+. "${HOME}/.cache/wal/colors.sh"
+
+icon=$color7
+text=$color15
+
 if ! updates_arch=$(checkupdates 2> /dev/null | wc -l ); then
     updates_arch=0
 fi
@@ -17,7 +22,7 @@ fi
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo " $updates"
+    echo "%{F$icon} %{F-}%{F$text}$updates%{F-}"
 else
     echo ""
 fi
