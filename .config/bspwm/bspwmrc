@@ -35,6 +35,7 @@ bspc rule -a $BROWSER -o desktop='Browser Main'
 
 # Put remote desktop windows goto the VM desktop
 bspc rule -a "rdesktop" desktop='VM'
+bspc rule -a "xfreerdp" desktop='VM'
 
 # Set zathura to tiled mode
 bspc rule -a Zathura state=tiled
@@ -81,7 +82,7 @@ then
 	flashfocus &
 fi
 
-discord &
+#discord &
 
 # Set wmname (make Java swing applications work)
 wmname LG3D
