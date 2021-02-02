@@ -63,7 +63,7 @@ then
 fi
 if ! pgrep "picom" > /dev/null
 then
-	picom &
+	picom --experimental-backends &
 fi
 if ! pgrep -x "redshift" > /dev/null
 then
