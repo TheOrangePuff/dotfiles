@@ -30,6 +30,9 @@ ctrl + Print
 super + alt + l
 	$HOME/.config/sxhkd/lock.sh
 
+super + e
+	thunar
+
 #
 # laptop shortcut keys
 #
