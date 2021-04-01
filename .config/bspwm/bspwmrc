@@ -1,6 +1,20 @@
 #!/bin/bash
 
 ### Variables
+UNIVERSAL_PROGRAMS=(
+    "sxhkd"
+    "picom --experimental-backends"
+    "redshift"
+    "dunst"
+    "light-locker --lock-after-screensaver=60"
+    "flashfocus"
+)
+LAPTOP_PROGRAMS=(
+
+)
+DESKTOP_PROGRAMS=(
+    "discord"
+)
 
 BROWSER='Firefox'
 WALLPAPER=$HOME/Wallpapers/foggy_forest.jpg
@@ -14,7 +28,7 @@ $HOME/.config/polybar/startup.sh
 ### Configure bspwm
 
 bspc config border_width         2
-bspc config window_gap          12
+bspc config window_gap           5
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -57,30 +71,13 @@ $HOME/.screenlayout/default.sh &
 $HOME/.config/polybar/startup.sh &
 
 # Start all programs
-if ! pgrep "sxhkd" > /dev/null
-then
-	sxhkd &
-fi
-if ! pgrep "picom" > /dev/null
-then
-	picom --experimental-backends &
-fi
-if ! pgrep -x "redshift" > /dev/null
-then
-	redshift &
-fi
-if ! pgrep "dunst" > /dev/null
-then
-	dunst &
-fi
-if ! pgrep "light-locker" > /dev/null
-then
-	light-locker --lock-after-screensaver=60 &
-fi
-if ! pgrep "flashfocus" > /dev/null
-then
-	flashfocus &
-fi
+for program in "${UNIVERSAL_PROGRAMS[@]}"
+do
+    if ! pgrep $program > /dev/null
+    then
+        $program &
+    fi
+done
 
 #discord &
 
