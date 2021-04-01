@@ -16,6 +16,9 @@ alias yu='yay -Syu'
 # Git
 alias tree='git log --all --decorate --oneline --graph'
 
+# Make directory
+alias md='mkdir'
+
 # bc - An arbitrary precision calculator language
 function =
 {
