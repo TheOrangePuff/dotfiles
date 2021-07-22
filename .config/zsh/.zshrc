@@ -8,7 +8,7 @@ EDITOR=nvim; export EDITOR
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/history/zsh
+HISTFILE=~/.history/zsh
 
 # Keep command history when opening a new window
 setopt extended_history
