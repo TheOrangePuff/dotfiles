@@ -8,10 +8,7 @@ alias vi='nvim'
 alias v='nvim'
 
 # Pacman
-alias pu='sudo pacman -Syu'
-
-# Yay
-alias yu='yay -Syu'
+alias pu='paru'
 
 # Git
 alias tree='git log --all --decorate --oneline --graph'
