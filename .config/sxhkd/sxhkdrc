@@ -8,7 +8,7 @@ super + alt + @h
 
 # terminal emulator
 super + Return
-	alacritty	
+	alacritty
 
 # program launcher
 super + @space
@@ -20,11 +20,11 @@ super + Escape
 
 # take a screenshot
 Print
-	scrot -u -e 'mv $f ~/images/shots/'
+	scrot -u -e 'mv $f ~/Documents/Personal/Screenshots/'
 
 # take an interactive screenshot
 ctrl + Print
-	scrot -s -f -e 'mv $f ~/images/shots/'
+	scrot -s -f -e 'mv $f ~/Documents/Personal/Screenshots/'
 
 # lock the computer
 super + alt + l
