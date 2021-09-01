@@ -1,0 +1,7 @@
+configuration {
+    combi-modi: [window,drun,ssh];
+    modi: "drun";
+    show-icons: true;
+}
+
+@theme "~/.cache/wal/colors-rofi-dark.rasi"
