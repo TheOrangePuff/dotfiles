@@ -1,4 +1,0 @@
-rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
-
-rofi.combi-modi: window,drun,ssh
-rofi.modi: drun
