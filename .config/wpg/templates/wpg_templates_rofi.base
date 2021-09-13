@@ -1,0 +1,4 @@
+color-normal:                   {color0}, {color15}, {color0}, {active}, {color15}
+color-urgent:                   {color0}, #d6b48d, #22231D, #d6b48d, {color15}
+color-active:                   {color0}, {color14}, {color0}, {color14}, {color0}
+color-window:                   {color0}, {active}, {inactive}
