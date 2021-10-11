@@ -24,6 +24,7 @@ compinit
 _comp_options+=(globdots)		# Include hidden files.
 
 # Bind ctrl+space to accept auto suggestion
+bindkey '^@' autosuggest-accept
 bindkey '^ ' autosuggest-accept
 
 # Use vim keys in tab complete menu:
