@@ -57,7 +57,9 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 
 # direnv
-eval "$(direnv hook zsh)"
+if [ ! command -v direnv &> /dev/null ]; then
+    eval "$(direnv hook zsh)"
+fi
 
 setopt PROMPT_SUBST
 
