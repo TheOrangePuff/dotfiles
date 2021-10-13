@@ -5,6 +5,9 @@ PS1="%{$fg[green]%}%~%<<%{$reset_color%} $ "
 VISUAL=nvim; export VISUAL
 EDITOR=nvim; export EDITOR
 
+# Export DOTFILES variable
+export DOTFILES="$HOME/.config"
+
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
@@ -70,3 +73,6 @@ show_virtual_env() {
   fi
 }
 PS1='$(show_virtual_env)'$PS1
+
+# Configure autosuggest
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
