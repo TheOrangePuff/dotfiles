@@ -34,6 +34,7 @@ set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
+set cursorline
 
 " Making things look nice
 	colorscheme gruvbox
