@@ -19,7 +19,7 @@ alias md='mkdir'
 # bc - An arbitrary precision calculator language
 function =
 {
-  echo "$@" | bc -l
+    echo "$@" | bc -l
 }
 
 alias calc="="
@@ -31,6 +31,12 @@ alias sls-deploy-local='docker-compose exec -u node -w /app offline /serverless/
 alias sls-invoke='docker-compose exec -u node -w /app offline /serverless/node_modules/serverless/bin/serverless.js invoke --log --profile localstack --stage dev --function'
 alias sls-invoke-stepf='docker-compose exec -u node -w /app offline /serverless/node_modules/serverless/bin/serverless.js invoke stepf --log --profile localstack --stage dev --name'
 alias sls='serverless'
+
+# Serverless plugin rsync function shortcut
+function sls-plugin-ln
+{
+    cd ../"$@" && npm run build && cd - && rsync -ar ../"$@" ./node_modules/"$@"
+}
 
 # NVM
 export NVM_DIR="$HOME/.config/nvm"
