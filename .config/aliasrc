@@ -35,7 +35,7 @@ alias sls='serverless'
 # Serverless plugin rsync function shortcut
 function sls-plugin-ln
 {
-    cd ../"$@" && npm run build && cd - && rsync -ar ../"$@" ./node_modules/"$@"
+    cd ../"$@" && npm run build && cd - && rsync -ar ../"$@" ./node_modules/@aligent
 }
 
 # NVM
