@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 PS1="%{$fg[green]%}%~%<<%{$reset_color%} $ "
@@ -59,6 +66,7 @@ autoload -Uz _zinit
 # Install plugins
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
+zinit light romkatv/powerlevel10k
 
 # direnv
 if [ ! command -v direnv &> /dev/null ]; then
@@ -74,5 +82,12 @@ show_virtual_env() {
 }
 PS1='$(show_virtual_env)'$PS1
 
+
 # Configure autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh

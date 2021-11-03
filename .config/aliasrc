@@ -24,6 +24,10 @@ function =
 
 alias calc="="
 
+# Scratchpad
+alias scratch="$EDITOR ~/scratch.txt"
+alias pad="scratch"
+
 # Alias NPM and serverless commands to run in containers
 alias node-run='docker run --rm -it --volume ~/.aws:/home/node/.aws --volume ~/.npm:/home/node/.npm --volume $PWD:/app aligent/serverless'
 alias serverless='node-run serverless'

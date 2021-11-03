@@ -14,3 +14,7 @@ cursor:
   #   - | Beam
   style: Block
 
+font:
+  normal:
+    family: "MesloLGS NF"
+
