@@ -1,4 +1,3 @@
-
 # Config for storing dotfiles in git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
@@ -16,6 +15,9 @@ alias tree='git log --all --decorate --oneline --graph'
 # Make directory
 alias md='mkdir'
 
+# Edit hosts file
+alias hosts='sudo $EDITOR /etc/hosts'
+
 # bc - An arbitrary precision calculator language
 function =
 {
@@ -28,22 +30,5 @@ alias calc="="
 alias scratch="$EDITOR ~/scratch.txt"
 alias pad="scratch"
 
-# Alias NPM and serverless commands to run in containers
-alias node-run='docker run --rm -it --volume ~/.aws:/home/node/.aws --volume ~/.npm:/home/node/.npm --volume $PWD:/app aligent/serverless'
-alias serverless='node-run serverless'
-alias sls-deploy-local='docker-compose exec -u node -w /app offline /serverless/node_modules/serverless/bin/serverless.js deploy --log --profile localstack --stage dev'
-alias sls-invoke='docker-compose exec -u node -w /app offline /serverless/node_modules/serverless/bin/serverless.js invoke --log --profile localstack --stage dev --function'
-alias sls-invoke-stepf='docker-compose exec -u node -w /app offline /serverless/node_modules/serverless/bin/serverless.js invoke stepf --log --profile localstack --stage dev --name'
-alias sls='serverless'
-
-# Serverless plugin rsync function shortcut
-function sls-plugin-ln
-{
-    cd ../"$@" && npm run build && cd - && rsync -ar ../"$@" ./node_modules/@aligent
-}
-
-# NVM
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+# Grab any aliases in the non version controlled alias file
+source "$HOME/.config/no_vc_aliasrc" 2> /dev/null
