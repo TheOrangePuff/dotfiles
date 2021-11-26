@@ -30,5 +30,8 @@ alias calc="="
 alias scratch="$EDITOR ~/scratch.txt"
 alias pad="scratch"
 
+# Make sure tmux uses the correct config file
+alias tmux="tmux -f $DOTFILES/tmux/tmux.conf"
+
 # Grab any aliases in the non version controlled alias file
 source "$HOME/.config/no_vc_aliasrc" 2> /dev/null
