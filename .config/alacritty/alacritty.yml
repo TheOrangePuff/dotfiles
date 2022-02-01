@@ -3,7 +3,8 @@ env:
   WINIT_X11_SCALE_FACTOR: "1"
 
 # Background opacity
-background_opacity: 0.85
+window:
+  opacity: 0.85
 
 cursor:
   # Cursor style
