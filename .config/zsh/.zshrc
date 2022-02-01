@@ -88,6 +88,8 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+# Add .local/bin to path for pip
+export PATH="$PATH:$HOME/.local/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
