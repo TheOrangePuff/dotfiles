@@ -1,5 +1,20 @@
+# Easier navigation: .., ..., ~ and -
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
 # Config for storing dotfiles in git
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# Git shortcuts
+alias g="git"
+alias pull='git pull'
+alias push='git push'
+alias commit='git commit'
+alias branch='git branch'
+alias check='git checkout'
+alias checkout='git checkout'
 
 # Use neovim
 alias vim='nvim'
@@ -8,9 +23,6 @@ alias v='nvim'
 
 # Pacman
 alias pu='paru'
-
-# Git
-alias tree='git log --all --decorate --oneline --graph'
 
 # Make directory
 alias md='mkdir'
