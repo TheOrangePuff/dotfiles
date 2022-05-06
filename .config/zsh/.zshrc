@@ -90,6 +90,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export PATH="$PATH:$HOME/.rvm/bin"
 # Add .local/bin to path for pip
 export PATH="$PATH:$HOME/.local/bin"
+# Add path for rust
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+
