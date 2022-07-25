@@ -68,6 +68,9 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light romkatv/powerlevel10k
 
+# Load custom hooks
+[ -f "$HOME/.config/zsh/hooks" ] && source "$HOME/.config/zsh/hooks"
+
 # direnv
 if [ ! command -v direnv &> /dev/null ]; then
     eval "$(direnv hook zsh)"

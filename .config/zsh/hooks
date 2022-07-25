@@ -1,0 +1,10 @@
+# run nvm use if a .nvmrc file is in the cd'd directory
+do-nvm-use() {
+    emulate -L zsh
+    if [ -f ".nvmrc" ]; then
+        nvm use
+    fi
+}
+
+add-zsh-hook chpwd do-nvm-use
+
