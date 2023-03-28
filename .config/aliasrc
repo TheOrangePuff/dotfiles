@@ -16,6 +16,7 @@ alias branch='git branch'
 alias check='git checkout'
 alias checkout='git checkout'
 alias main='git checkout main'
+alias glog='git log --pretty=format:"%C(magenta)%h%Creset -%C(red)%d%Creset %s %C(dim green)(%cr) %C(cyan)<%an>%Creset"'
 
 # Use neovim
 alias vim='nvim'
