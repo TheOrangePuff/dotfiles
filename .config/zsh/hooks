@@ -2,7 +2,7 @@
 do-nvm-use() {
     emulate -L zsh
     if [ -f ".nvmrc" ]; then
-        nvm use
+        nvm use || nvm install && nvm use
     fi
 }
 
