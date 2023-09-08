@@ -29,6 +29,9 @@ alias pu='paru'
 # Make directory
 alias md='mkdir'
 
+# Open command
+alias open='xdg-open'
+
 # Edit hosts file
 alias hosts='sudo $EDITOR /etc/hosts'
 
