@@ -37,6 +37,10 @@ _comp_options+=(globdots)		# Include hidden files.
 bindkey '^@' autosuggest-accept
 bindkey '^ ' autosuggest-accept
 
+# Bind ctl+r to search history
+bindkey '^r' history-search-backward
+bindkey '^R' history-search-forward
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
