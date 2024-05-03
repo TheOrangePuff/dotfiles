@@ -64,7 +64,7 @@ set cursorline
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 
-" Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
+" Splits open at the bottom and right, unlike vim defaults.
 	set splitbelow splitright
 
 " Nerd tree
