@@ -71,6 +71,8 @@ autoload -Uz _zinit
 zinit light zsh-users/zsh-autosuggestions
 zinit light zdharma/fast-syntax-highlighting
 zinit light romkatv/powerlevel10k
+zinit light ael-code/zsh-colored-man-pages
+zinit light MichaelAquilina/zsh-you-should-use
 
 # Load custom hooks
 [ -f "$HOME/.config/zsh/hooks" ] && source "$HOME/.config/zsh/hooks"
