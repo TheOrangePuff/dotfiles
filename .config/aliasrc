@@ -23,6 +23,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
 
+# Node stuff
+alias npx='npm exec'
+
 # Pacman
 alias pu='paru'
 
