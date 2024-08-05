@@ -2,12 +2,10 @@ local global = vim.g
 local opt = vim.opt
 local keymap = vim.keymap
 
-keymap.set("n", "<SPACE>", "<NOP>")
-global.mapleader = "<Space>"
-global.maplocalleader = "<Space>"
+global.mapleader = " "
+global.maplocalleader = " "
 
 opt.bg = "dark"
-opt.go = "a"
 opt.mouse = "a"
 opt.hlsearch = false
 opt.clipboard = "unnamedplus"
