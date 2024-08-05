@@ -1,7 +1,5 @@
 local keymap = vim.keymap
 
--- TODO: confirm that this is still needed when leader is mapped to this
-keymap.set("n", "<SPACE>", "<NOP>")
 keymap.set("n", "c", '"_c')
 
 -- Split nav
