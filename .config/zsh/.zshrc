@@ -95,12 +95,20 @@ PS1='$(show_virtual_env)'$PS1
 # Configure autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Setup nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 # Add .local/bin to path for pip
 export PATH="$PATH:$HOME/.local/bin"
 # Add path for rust
 export PATH="$PATH:$HOME/.cargo/bin"
+# Add path for home dir bin
+export PATH="$PATH:$HOME/bin"
+# Add path for neovim bin
+export PATH="$PATH:$HOME/bin/nvim-linux64/bin"
 
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
