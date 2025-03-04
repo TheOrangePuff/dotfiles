@@ -113,3 +113,6 @@ export PATH="$PATH:$HOME/bin/nvim-linux64/bin"
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+# Enable 1password plugins
+[[ ! -f ~/.config/op/plugins.sh ]] || source ~/.config/op/plugins.sh
+
