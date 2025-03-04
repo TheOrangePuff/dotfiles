@@ -33,14 +33,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
 
-# Bind ctrl+space to accept auto suggestion
-bindkey '^@' autosuggest-accept
-bindkey '^ ' autosuggest-accept
-
-# Bind ctl+r to search history
-bindkey '^r' history-search-backward
-bindkey '^R' history-search-forward
-
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -67,8 +59,18 @@ autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 # End of Zinit installer's chunk
 
-# Install plugins
+# zsh auto suggestion config
 zinit light zsh-users/zsh-autosuggestions
+
+# Bind ctrl+space to accept auto suggestion
+bindkey '^@' autosuggest-accept
+bindkey '^ ' autosuggest-accept
+
+# history search config
+zinit load zdharma-continuum/history-search-multi-word
+
+bindkey "^R" history-search-multi-word
+
 zinit light zdharma/fast-syntax-highlighting
 zinit light romkatv/powerlevel10k
 zinit light ael-code/zsh-colored-man-pages
@@ -91,7 +93,6 @@ show_virtual_env() {
 }
 PS1='$(show_virtual_env)'$PS1
 
-
 # Configure autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
@@ -99,7 +100,7 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+# Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
 # Add .local/bin to path for pip
 export PATH="$PATH:$HOME/.local/bin"
