@@ -18,6 +18,10 @@ export DOTFILES="$HOME/.config"
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
+
+# Setup history file and create if needed
+mkdir -p ~/.history
+touch ~/.history/zsh
 HISTFILE=~/.history/zsh
 
 # Keep command history when opening a new window
