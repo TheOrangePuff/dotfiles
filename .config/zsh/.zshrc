@@ -51,14 +51,14 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 # Added by Zinit's installer
-if [[ ! -f $HOME/.config/zsh/.zinit/bin/zinit.zsh ]]; then
+if [[ ! -f $HOME/.config/zsh/.zinit/bin/zi.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
     command mkdir -p "$HOME/.config/zsh/.zinit" && command chmod g-rwX "$HOME/.config/zsh/.zinit"
     command git clone https://github.com/zdharma/zinit "$HOME/.config/zsh/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f" || \
         print -P "%F{160}▓▒░ The clone has failed.%f"
 fi
-source "$HOME/.config/zsh/.zinit/bin/zinit.zsh"
+source "$HOME/.config/zsh/.zinit/bin/zi.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 # End of Zinit installer's chunk
