@@ -5,7 +5,7 @@
 Run the setup script:
 
 ```bash
-curl -Lks https://raw.githubusercontent.com/TheOrangePuff/dotfiles/refs/heads/master/setup.sh | /bin/bash
+curl -Lks https://raw.githubusercontent.com/TheOrangePuff/dotfiles/refs/heads/main/setup.sh | /bin/bash
 ```
 
 Or run the commands manually:
