@@ -100,9 +100,13 @@ PS1='$(show_virtual_env)'$PS1
 # Configure autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
-# Setup nvm
+# Setup nvm with lazy loading for faster startup
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# Lazy load NVM to improve shell startup time
+alias nvm='unalias nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; nvm'
+alias node='unalias nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; node'
+alias npm='unalias nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npm'
+alias npx='unalias nvm node npm npx; [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"; npx'
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -121,3 +125,5 @@ export PATH="$PATH:$HOME/bin/nvim-linux64/bin"
 # Enable 1password plugins
 [[ ! -f ~/.config/op/plugins.sh ]] || source ~/.config/op/plugins.sh
 
+# NVM bash completion also lazy loaded
+alias nvm_completion='unalias nvm_completion; [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
