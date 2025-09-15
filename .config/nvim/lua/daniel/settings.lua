@@ -5,7 +5,6 @@ local keymap = vim.keymap
 global.mapleader = " "
 global.maplocalleader = " "
 
-opt.bg = "dark"
 opt.mouse = "a"
 opt.hlsearch = false
 opt.clipboard = "unnamedplus"
