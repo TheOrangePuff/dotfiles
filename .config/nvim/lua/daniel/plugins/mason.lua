@@ -13,7 +13,7 @@ return {
 			ensure_installed = {
 				"eslint",
 				"jsonls",
-				"tsserver",
+				"ts_ls",
 			},
 		})
 
