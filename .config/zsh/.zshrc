@@ -1,9 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -76,7 +70,6 @@ zinit load zdharma-continuum/history-search-multi-word
 bindkey "^R" history-search-multi-word
 
 zinit light zdharma/fast-syntax-highlighting
-zinit light romkatv/powerlevel10k
 zinit light ael-code/zsh-colored-man-pages
 zinit light MichaelAquilina/zsh-you-should-use
 
@@ -100,6 +93,9 @@ PS1='$(show_virtual_env)'$PS1
 # Configure autosuggest
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
+# Load Catppuccin theme for syntax highlighting
+[ -f "$HOME/.config/zsh/catppuccin-syntax.zsh" ] && source "$HOME/.config/zsh/catppuccin-syntax.zsh"
+
 # Setup nvm with lazy loading for faster startup
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 # Lazy load NVM to improve shell startup time
@@ -121,8 +117,6 @@ export PATH="$PATH:$HOME/bin/nvim-linux64/bin"
 # Add path for vscode on macos
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
-# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
 # Enable 1password plugins
 [[ ! -f ~/.config/op/plugins.sh ]] || source ~/.config/op/plugins.sh
