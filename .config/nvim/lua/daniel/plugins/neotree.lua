@@ -10,6 +10,18 @@ return {
 		require("neo-tree").setup({
 			enable_git_status = true,
             close_if_last_window = false,
+            filesystem = {
+                filtered_items = {
+                    visible = true,
+                    hide_dotfiles = false,
+                    hide_gitignored = false,
+                    hide_by_name = {
+                        ".git",
+                        ".DS_Store",
+                        "thumbs.db",
+                    },
+                },
+            },
             event_handlers = {
                 {
                     event = "file_open_requested",
