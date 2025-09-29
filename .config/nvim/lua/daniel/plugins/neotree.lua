@@ -19,6 +19,7 @@ return {
                         ".git",
                         ".DS_Store",
                         "thumbs.db",
+                        ".next",
                     },
                 },
             },
