@@ -6,7 +6,7 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local nvim_lsp = require("lspconfig")
+		local lspconfig = vim.lsp.config
 
 		local on_attach = function(client, bufnr)
 			-- format on save
@@ -23,20 +23,34 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		-- Setup LSP servers
-		nvim_lsp.ts_ls.setup({
+		lspconfig.ts_ls = {
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
+			cmd = { "typescript-language-server", "--stdio" },
+			filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+			root_dir = function(fname)
+				return vim.fn.getcwd()
+			end,
+		}
 
-		nvim_lsp.jsonls.setup({
+		lspconfig.jsonls = {
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
+			cmd = { "vscode-json-language-server", "--stdio" },
+			filetypes = { "json", "jsonc" },
+			root_dir = function(fname)
+				return vim.fn.getcwd()
+			end,
+		}
 
-		nvim_lsp.eslint.setup({
+		lspconfig.eslint = {
 			on_attach = on_attach,
 			capabilities = capabilities,
-		})
+			cmd = { "vscode-eslint-language-server", "--stdio" },
+			filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
+			root_dir = function(fname)
+				return vim.fn.getcwd()
+			end,
+		}
 	end,
 }
