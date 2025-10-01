@@ -24,7 +24,8 @@ alias vi='nvim'
 alias v='nvim'
 
 # Node stuff
-alias npx='npm exec'
+# Commented out - npx is handled by NVM lazy loading in .zshrc
+# alias npx='npm exec'
 
 # Pacman
 alias pu='paru'

@@ -2,6 +2,12 @@
 do-nvm-use() {
     emulate -L zsh
     if [ -f ".nvmrc" ]; then
+        # Ensure nvm is loaded before calling nvm use
+        if ! typeset -f nvm > /dev/null; then
+            # Remove the aliases BEFORE sourcing nvm.sh
+            unalias nvm node npm npx 2>/dev/null
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        fi
         nvm use || nvm install && nvm use
     fi
 }
