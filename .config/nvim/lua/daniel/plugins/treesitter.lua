@@ -21,6 +21,8 @@ return {
 				"json",
 				"javascript",
 				"typescript",
+				"tsx",
+				"jsdoc",
 				"yaml",
 				"lua",
 				"vim",

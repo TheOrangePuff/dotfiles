@@ -6,51 +6,75 @@ return {
 		{ "folke/neodev.nvim", opts = {} },
 	},
 	config = function()
-		local lspconfig = vim.lsp.config
-
 		local on_attach = function(client, bufnr)
-			-- format on save
-			if client.server_capabilities.documentFormattingProvider then
-				vim.api.nvim_create_autocmd("BufWritePre", {
-					group = vim.api.nvim_create_augroup("Format", { clear = true }),
-					buffer = bufnr,
-					callback = function()
-						vim.lsp.buf.format()
-					end,
-				})
+			-- LSP keybindings
+			local opts = { buffer = bufnr, silent = true }
+			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+			vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+			vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+
+			-- Enable inlay hints if supported
+			if client.server_capabilities.inlayHintProvider then
+				vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 			end
+
+			-- Disable LSP formatting in favour of conform.nvim
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
 		end
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local util = require("lspconfig.util")
 
-		lspconfig.ts_ls = {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			cmd = { "typescript-language-server", "--stdio" },
-			filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-			root_dir = function(fname)
-				return vim.fn.getcwd()
-			end,
-		}
+		-- Configure diagnostics
+		vim.diagnostic.config({
+			virtual_text = {
+				prefix = "●",
+				source = "if_many",
+			},
+			float = {
+				source = "always",
+				border = "rounded",
+			},
+			signs = true,
+			underline = true,
+			update_in_insert = false,
+		})
 
-		lspconfig.jsonls = {
-			on_attach = on_attach,
-			capabilities = capabilities,
+		-- ts_ls is handled by typescript-tools.nvim plugin instead
+		-- vim.lsp.config.ts_ls = {
+		-- 	cmd = { "typescript-language-server", "--stdio" },
+		-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+		-- 	root_markers = { "package.json", "tsconfig.json", ".git" },
+		-- 	on_attach = on_attach,
+		-- 	capabilities = capabilities,
+		-- }
+
+		vim.lsp.config.jsonls = {
 			cmd = { "vscode-json-language-server", "--stdio" },
 			filetypes = { "json", "jsonc" },
-			root_dir = function(fname)
-				return vim.fn.getcwd()
-			end,
-		}
-
-		lspconfig.eslint = {
+			root_markers = { "package.json", ".git" },
 			on_attach = on_attach,
 			capabilities = capabilities,
-			cmd = { "vscode-eslint-language-server", "--stdio" },
-			filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx", "vue" },
-			root_dir = function(fname)
-				return vim.fn.getcwd()
-			end,
 		}
+
+		vim.lsp.config.eslint = {
+			cmd = { "vscode-eslint-language-server", "--stdio" },
+			filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "vue" },
+			root_markers = { "package.json", ".eslintrc.js", ".eslintrc.json", ".git" },
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
+
+		-- Enable LSP servers
+		vim.lsp.enable("jsonls")
+		vim.lsp.enable("eslint")
 	end,
 }
