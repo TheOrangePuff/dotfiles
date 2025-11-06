@@ -48,14 +48,37 @@ return {
 			update_in_insert = false,
 		})
 
-		-- ts_ls is handled by typescript-tools.nvim plugin instead
-		-- vim.lsp.config.ts_ls = {
-		-- 	cmd = { "typescript-language-server", "--stdio" },
-		-- 	filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-		-- 	root_markers = { "package.json", "tsconfig.json", ".git" },
-		-- 	on_attach = on_attach,
-		-- 	capabilities = capabilities,
-		-- }
+		vim.lsp.config.ts_ls = {
+			cmd = { "typescript-language-server", "--stdio" },
+			filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+			root_markers = { "package.json", "tsconfig.json", ".git" },
+			on_attach = on_attach,
+			capabilities = capabilities,
+			settings = {
+				typescript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+				javascript = {
+					inlayHints = {
+						includeInlayParameterNameHints = "all",
+						includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+						includeInlayFunctionParameterTypeHints = true,
+						includeInlayVariableTypeHints = true,
+						includeInlayPropertyDeclarationTypeHints = true,
+						includeInlayFunctionLikeReturnTypeHints = true,
+						includeInlayEnumMemberValueHints = true,
+					},
+				},
+			},
+		}
 
 		vim.lsp.config.jsonls = {
 			cmd = { "vscode-json-language-server", "--stdio" },
@@ -74,6 +97,7 @@ return {
 		}
 
 		-- Enable LSP servers
+		vim.lsp.enable("ts_ls")
 		vim.lsp.enable("jsonls")
 		vim.lsp.enable("eslint")
 	end,
