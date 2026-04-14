@@ -19,3 +19,15 @@ opt.wildmode = "longest,list,full"
 opt.splitbelow = true
 opt.splitright = true
 opt.updatetime = 250 -- ensure sign column updates frequency
+
+-- Treesitter (built-in in Neovim 0.12+)
+vim.treesitter.language.register("yaml", "helm")
+
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function(args)
+		-- silently skip buffers with no treesitter parser
+		if pcall(vim.treesitter.start, args.buf) then
+			vim.bo[args.buf].indentexpr = "v:lua.require'vim.treesitter'.indentexpr()"
+		end
+	end,
+})
